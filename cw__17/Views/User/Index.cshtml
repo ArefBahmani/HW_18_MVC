@@ -1,0 +1,29 @@
+﻿@using cw__17.Models.Entities
+@model List<User>
+<table class="table table-bordered table-responsive table-primary table-hover">
+	<thead>
+		<tr>
+			<th>شناسه</th>
+			<th>نام</th>
+			<th>نام خانوادگی</th>
+			<th> موجودی</th>
+			<th> نام کاربری</th>
+			<th> رمز عبور</th>
+
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var user in @Model)
+		{
+			<tr>
+				<td>@user.Id</td>
+				<td>@user.FirstName</td>
+				<td>@user.LastName</td>
+				<td>@user.Balance</td>
+				<td>@user.UserName</td>
+				<td>@user.Password</td>
+
+			</tr>
+		}
+	</tbody>
+</table>

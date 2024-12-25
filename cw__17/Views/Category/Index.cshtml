@@ -1,0 +1,48 @@
+﻿@using cw__17.Models.Entities;
+@model List<Category>
+<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">
+	Add Category
+</button>
+
+<div class="modal" tabindex="-1" id="modal">
+	<div class="modal-dialog" >
+		<div class="modal-content">
+			<form asp-action="Add">
+				<div class="modal-body">
+
+
+					<label id="Title" name="Title">
+						Title
+					</label>
+					<input type="text" id="Title" name="Title" />
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="submit" class="btn btn-primary">Save</button>
+
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<table class="table table-bordered table-responsive table-primary table-hover">
+	<thead>
+		<tr>
+			<th>شناسه</th>
+			<th>عنوان دسته بندی </th>
+
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in @Model)
+		{
+			<tr>
+				<td>@item.Id</td>
+				<td>@item.Title</td>
+
+			</tr>
+		}
+	</tbody>
+</table>

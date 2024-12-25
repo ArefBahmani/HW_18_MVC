@@ -1,0 +1,53 @@
+﻿@using cw__17.Models.Entities;
+@model List<Product>
+<div class="modal" tabindex="-1" id="modal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form asp-action="Add">
+				<div class="modal-body">
+
+
+						<label id="Id" name="Id">
+					<label id="Name" name="Name">
+							<label id="Price" name="Price">
+								<label id="Count" name="Count">
+						Title
+					</label>
+					<input type="text" id="Id" name="Id" />
+								<input type="text" id="Name" name="Name" />
+								<input type="text" id="Price" name="Price" />
+								<input type="text" id="Count" name="Count" />
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="submit" class="btn btn-primary">Save</button>
+
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<table class="table table-bordered table-responsive table-primary table-hover">
+	<thead>
+		<tr>
+			<th>شناسه</th>
+			<th>عنوان کالا</th>
+			<th>قیمت</th>
+			<th>تعداد موجودی</th>
+			
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in @Model)
+		{
+			<tr>
+				<td>@item.Id</td>
+				<td>@item.Name</td>
+				<td>@item.Price</td>
+				<td>@item.Count</td>
+				
+			</tr>
+		}
+	</tbody>
+</table>
